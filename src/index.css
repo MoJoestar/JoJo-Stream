@@ -1,0 +1,97 @@
+/* index.css */
+/* 0) JOJO FONT DECLARATION */
+@font-face {
+  font-family: 'JoJoFont';
+  src: url('/fonts/JoJoFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== 1) BACKGROUND IMAGE - apply to entire site ===== */
+body {
+  /* The URL “/background.jpg” is served from public/ */
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ===== 2) THEME VARIABLES AND GLOBAL RESET ===== */
+:root {
+  --color-primary: #e0c3fc;   /* light lavender */
+  --color-secondary: #2e2e2e; /* near-black background overlay, if needed */
+  --color-accent: #b06ab3;    /* medium purple for buttons, etc. */
+  --color-text: #ffffff;      /* white text on dark backgrounds */
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  color: var(--color-text);
+  font-family: var(--font-base);
+}
+
+/* We’ll still have a semi-opaque overlay on containers so text is legible over the background */
+.container {
+  background-color: rgba(46, 46, 46, 0.85); /* dark, slightly transparent */
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #a055a0; /* slightly darker purple */
+}
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: 4px;
+}
+input::placeholder {
+  color: #ddd;
+}
+
+/* Links */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Simple card for movie/show poster displays */
+.card {
+  background-color: rgba(46, 46, 46, 0.95);
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--color-text);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.card .card-content {
+  padding: 10px;
+}
